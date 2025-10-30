@@ -15,21 +15,23 @@ df = pd.read_csv('../DataSet/Superstore.csv', encoding='latin1')
 #
 # print(df.isnull().sum())
 
-df['Order Date'] = pd.to_datetime(df['Order Date'])
+# df['Order Date'] = pd.to_datetime(df['Order Date'])
+#
+# df['Ship Date'] = pd.to_datetime(df['Ship Date'])
+#
+# df['Year'] = df['Order Date'].dt.year
+#
+# df['Month'] = df['Order Date'].dt.month
+#
+# df['Month_Name'] = df['Order Date'].dt.month_name()
+#
+# df['Quarter'] = df['Order Date'].dt.quarter
+#
+# df['Day_of_Week'] = df['Order Date'].dt.day_name()
+#
+# df['Week_of_Year'] = df['Order Date'].dt.isocalendar().week
+#
+# print(df[['Order Date', 'Year', 'Month', 'Month_Name', 'Quarter', 'Day_of_Week']].head(10))
 
-df['Ship Date'] = pd.to_datetime(df['Ship Date'])
-
-df['Year'] = df['Order Date'].dt.year
-
-df['Month'] = df['Order Date'].dt.month
-
-df['Month_Name'] = df['Order Date'].dt.month_name()
-
-df['Quarter'] = df['Order Date'].dt.quarter
-
-df['Day_of_Week'] = df['Order Date'].dt.day_name()
-
-df['Week_of_Year'] = df['Order Date'].dt.isocalendar().week
-
-print(df[['Order Date', 'Year', 'Month', 'Month_Name', 'Quarter', 'Day_of_Week']].head(10))
+df.to_csv('../DataSet/Superstore_Featured.csv', index=False)
 
